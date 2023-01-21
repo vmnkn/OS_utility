@@ -55,6 +55,7 @@ def check_directory():
                      f'{magenta}- Input "exit" for exit: ')
         if path == 'exit':
             break
+        load()
         try:
             print(light_magenta + '\n- Content:')
             for file in os.listdir(path):
@@ -62,10 +63,12 @@ def check_directory():
         except FileNotFoundError:
             print(f'\n{light_red}- UNCORRECT PATH'
                   f'\n{red}- Try again\n')
+            print('\n')
 
 
 def main():
     """Main program algorythm"""
+    load()
     greet_user()
     while True:
         user_input = input(light_blue + '---Input command: ')
